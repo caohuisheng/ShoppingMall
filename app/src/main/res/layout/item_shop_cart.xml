@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <CheckBox
+            android:id="@+id/cb_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:button="@null"
+            android:background="@drawable/checkbox_selector"
+            android:clickable="false"/>
+
+        <ImageView
+            android:id="@+id/iv_cart"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:background="@drawable/new_img_loading_1"
+            android:layout_marginLeft="10dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp">
+            <TextView
+                android:id="@+id/tv_cart_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="华硕（ASUS ）经典系列 X554LP 15.6 英寸笔记本
+（i5-5200U 4G 500G R5-M230 1G 独显 蓝牙 Win8.1 黑色）"
+                android:ellipsize="end"
+                android:lines="2"
+                android:textColor="#404040"
+                android:textSize="12sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:id="@+id/tv_cart_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥121.44"/>
+
+                <com.atguigu.shoppingmall.shoppingcart.view.AddSubView
+                    android:id="@+id/AddSubView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:background="#22000000"/>
+
+</LinearLayout>
