@@ -47,7 +47,7 @@ public class TypeFragmentList extends Fragment {
             Constants.OVERCOAT_URL,Constants.ACCESSORY_URL,Constants.BAG_URL,Constants.DRESS_UP_URL,
             Constants.HOME_PRODUCTS_URL,Constants.STATIONERY_URL,Constants.DIGIT_URL,Constants.GAME_URL};
 
-    private String[] typeList = {"小裙子","上衣","下装","外套","配件","包包","装饰","居家用品"};
+    private String[] typeList = {"小裙子","上衣","下装","外套","配件","包包","装饰","居家用品","办公文具","数码周边","游戏专区"};
 
     public TypeFragmentList(Context mContext) {
         this.mContext = mContext;

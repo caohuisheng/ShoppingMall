@@ -29,6 +29,8 @@
         </activity>
         <activity android:name=".app.MainActivity"/>
         <activity android:name=".app.GoodsInfoActivity"/>
+        <activity android:name=".home.activity.GoodsListActivity"/>
+        <activity android:name=".app.MessageActivity"/>
     </application>
 
 </manifest>

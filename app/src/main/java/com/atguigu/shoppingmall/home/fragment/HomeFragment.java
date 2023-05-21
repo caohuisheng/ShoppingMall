@@ -1,6 +1,7 @@
 package com.atguigu.shoppingmall.home.fragment;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.alibaba.fastjson.JSON;
 import com.atguigu.shoppingmall.R;
+import com.atguigu.shoppingmall.app.MessageActivity;
 import com.atguigu.shoppingmall.base.BaseFragment;
 import com.atguigu.shoppingmall.home.adapter.HomeFragmentAdapter;
 import com.atguigu.shoppingmall.home.bean.ResultBeanData;
@@ -69,6 +71,9 @@ public class HomeFragment extends BaseFragment {
             Toast.makeText(mContext,"按钮",Toast.LENGTH_SHORT).show();
             //回到顶部
             rv_home.scrollToPosition(0);
+        });
+        tv_message_home.setOnClickListener(view -> {
+            startActivity(new Intent(mContext, MessageActivity.class));
         });
     }
 

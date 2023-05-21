@@ -2,9 +2,6 @@ package com.atguigu.shoppingmall.utils;
 
 public class Constants {
 
-
-
-
     //public static String BASE_URL = "http://10.135.254.249:8080/atguigu";
     public static String BASE_URL = "http://192.168.223.2:8080/atguigu";
     //请求json数据的基本URL
@@ -13,14 +10,45 @@ public class Constants {
     //请求图片数据的基本URL
     public static String  BASE_URL_IMAGE = BASE_URL + "/img";
 
+    //商品详情路径
+    public static String GOODS_INFO_URL = BASE_URL + "/json/GOODSINFO_URL.json";
+
+    //客服数据
+    public static final String CALL_CENTER = "http://www6.53kf.com/webCompany.php?arg=10007377&style=1&kflist=off&kf=info@atguigu.com,video@atguigu.com,public@atguigu.com,3069368606@qq.com,215648937@qq.com,sudan@atguigu.com,sszhang@atguigu.com&zdkf_type=1&language=zh-cn&charset=gbk&referer=http%3A%2F%2Fwww.atguigu.com%2Fcontant.shtml&keyword=&tfrom=1&tpl=crystal_blue&timeStamp=1479001706368&ucust_id=";
+
+    /**
+     * 主页
+     */
     //主页面fragment路径
     public static String HOME_URL = BASE_URL + "/json/HOME_URL.json";
 
+    /**
+     * 主页频道数据
+     */
+    //服饰
+    public static final String CLOSE_STORE = BASE_URL_JSON + "CLOSE_STORE.json";
+    //游戏
+    public static final String GAME_STORE = BASE_URL_JSON + "GAME_STORE.json";
+    //动漫
+    public static final String COMIC_STORE = BASE_URL_JSON + "COMIC_STORE.json";
+    //cosplay
+    public static final String COSPLAY_STORE = BASE_URL_JSON + "COSPLAY_STORE.json";
+    //古风
+    public static final String GUFENG_STORE = BASE_URL_JSON + "GUFENG_STORE.json";
+    //漫展
+    public static final String STICK_STORE = BASE_URL_JSON + "STICK_STORE.json";
+    //文具
+    public static final String WENJU_STORE = BASE_URL_JSON + "WENJU_STORE.json";
+    //零食
+    public static final String FOOD_STORE = BASE_URL_JSON + "FOOD_STORE.json";
+    //首饰厂
+    public static final String SHOUSHI_STORE = BASE_URL_JSON + "SHOUSHI_STORE.json";
+
+    /**
+     * 分类
+     */
     //分类Fragment里的标签Fragment数据
     public static final String TAG_URL = BASE_URL_JSON + "TAG_URL.json";
-
-    //商品详情路径
-    public static String GOODS_INFO_URL = BASE_URL + "/json/GOODSINFO_URL.json";
 
     //小裙子
     public static final String SKIRT_URL = BASE_URL_JSON + "SKIRT_URL.json";
@@ -44,5 +72,11 @@ public class Constants {
     public static final String DIGIT_URL = BASE_URL_JSON +  "DIGIT_URL.json";
     //游戏专区
     public static final String GAME_URL = BASE_URL_JSON + "GAME_URL.json";
+
+    /**
+     * 社区
+     */
+    public static final String NEW_POST_URL = BASE_URL_JSON + "NEW_POST_URL.json";
+    public static final String HOT_POST_URL = BASE_URL_JSON + "HOT_POST_URL.json";
 
 }

@@ -59,4 +59,11 @@ dependencies {
     //segmentTabLayout
     implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
 
+    //butterknife
+    implementation 'com.jakewharton:butterknife:8.8.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.0'
+
+    //openDanmaku
+    implementation 'com.linsea:opendanmaku:1.0.0@aar'
+
 }

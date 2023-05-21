@@ -11,7 +11,6 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,19 +23,16 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.atguigu.shoppingmall.R;
 import com.atguigu.shoppingmall.app.GoodsInfoActivity;
+import com.atguigu.shoppingmall.home.activity.GoodsListActivity;
 import com.atguigu.shoppingmall.home.bean.GoodsBean;
 import com.atguigu.shoppingmall.home.bean.ResultBeanData;
 import com.atguigu.shoppingmall.utils.Constants;
 import com.bumptech.glide.Glide;
 import com.youth.banner.Banner;
-import com.youth.banner.adapter.BannerAdapter;
 import com.youth.banner.adapter.BannerImageAdapter;
 import com.youth.banner.holder.BannerImageHolder;
 import com.youth.banner.indicator.CircleIndicator;
-import com.youth.banner.transformer.AlphaPageTransformer;
-import com.youth.banner.transformer.ScaleInTransformer;
 
-import java.nio.channels.Channel;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -200,6 +196,8 @@ public class HomeFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         private void setBannerData(List<ResultBeanData.ResultBean.BannerInfoBean> bannerInfo){
 
             List<String> imageUrls = new ArrayList<>();
+//            banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR);
+//            banner.setBannerAnimation(Transformer.Accordion);
             for(int i=0;i<bannerInfo.size();i++){
                 imageUrls.add(bannerInfo.get(i).getImage());
             }
@@ -241,6 +239,15 @@ public class HomeFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             //设置适配器
             BaseAdapter adapter = new ChannelAdapter(context,channelInfo);
             gv_channel.setAdapter(adapter);
+            //设置点击每一条的·监听器
+            gv_channel.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Intent intent = new Intent(mContext, GoodsListActivity.class);
+                    intent.putExtra("position",position);
+                    mContext.startActivity(intent);
+                }
+            });
         }
     }
 
