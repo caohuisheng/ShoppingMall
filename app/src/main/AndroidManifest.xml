@@ -31,6 +31,7 @@
         <activity android:name=".app.GoodsInfoActivity"/>
         <activity android:name=".home.activity.GoodsListActivity"/>
         <activity android:name=".app.MessageActivity"/>
+        <activity android:name=".app.LoginActivity"/>
     </application>
 
 </manifest>

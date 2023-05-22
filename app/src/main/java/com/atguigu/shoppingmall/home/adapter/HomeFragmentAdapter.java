@@ -32,6 +32,7 @@ import com.youth.banner.Banner;
 import com.youth.banner.adapter.BannerImageAdapter;
 import com.youth.banner.holder.BannerImageHolder;
 import com.youth.banner.indicator.CircleIndicator;
+import com.youth.banner.transformer.RotateUpPageTransformer;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -198,6 +199,8 @@ public class HomeFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             List<String> imageUrls = new ArrayList<>();
 //            banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR);
 //            banner.setBannerAnimation(Transformer.Accordion);
+            //设置切换效果
+            banner.setPageTransformer(new RotateUpPageTransformer());
             for(int i=0;i<bannerInfo.size();i++){
                 imageUrls.add(bannerInfo.get(i).getImage());
             }
@@ -227,19 +230,19 @@ public class HomeFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             this.gv_channel = itemView.findViewById(R.id.gv_channel);
 
             //设置item的点击事件
-            gv_channel.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Toast.makeText(mContext,"position:"+position,Toast.LENGTH_SHORT).show();
-                }
-            });
+//            gv_channel.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//                @Override
+//                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                    Toast.makeText(mContext,"position:"+position,Toast.LENGTH_SHORT).show();
+//                }
+//            });
         }
 
         public void setChannelData(List<ResultBeanData.ResultBean.ChannelInfoBean> channelInfo){
             //设置适配器
             BaseAdapter adapter = new ChannelAdapter(context,channelInfo);
             gv_channel.setAdapter(adapter);
-            //设置点击每一条的·监听器
+            //设置点击每一条的监听器
             gv_channel.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -313,7 +316,12 @@ public class HomeFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
                     imageView.setOnClickListener(view -> {
                         Toast.makeText(mContext,"position:"+position,Toast.LENGTH_SHORT).show();
-
+                        //创建GoodsBean
+                        GoodsBean goodsBean = new GoodsBean();
+                        goodsBean.setFigure(actInfoBean.getIcon_url());
+                        goodsBean.setName(actInfoBean.getName());
+                        //goodsBean.setCover_price(actInfoBean.getPrice());
+                        startGoodsInfoActivity(goodsBean);
                     });
                     return imageView;
                 }
